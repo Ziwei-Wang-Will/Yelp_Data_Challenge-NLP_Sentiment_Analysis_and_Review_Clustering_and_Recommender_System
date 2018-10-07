@@ -82,7 +82,7 @@
     - Generate TF-IDF Matrix
 - Classifying positive/negative review
     - Basic model performance comparison
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="600" height="240"> 
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="400" height="160"> 
 
 
 
