@@ -1,6 +1,6 @@
 # Yelp_Data_Challenge
 
-<img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_and_Clustering_and_Sentiment_Classification_and_Recommender_System/blob/master/images/Yelp_image.jpg" width="660" height="240">
+<img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_and_Clustering_and_Sentiment_Classification_and_Recommender_System/blob/master/images/Yelp_image.jpg" width="660" height="200">
 
 [**Code**](pending)
 
@@ -42,3 +42,18 @@
         - yelp_academic_dataset_user.json
         - **Note**: Each file is composed of a single object type, one json-object per-line.
 
+## Analysis Structure
+1. Data Preprocessing
+2. 
+
+
+## Analysis Details
+
+### 1. Data Preprocessing
+- Extracted target data
+    - created filters that selects business:
+        - that are located in "Las Vegas"
+        - that contains "Restaurants" in their category
+    - merged with review data on "business_id"
+    - Further filtered data by date: 
+        - reviews between '2015-07-01' and '2018-01-01'
