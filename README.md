@@ -22,24 +22,23 @@
 - 3. **Built a restaurant recommender system** 
     - Used **collaborative filtering** and **matrix factorization** based on users’ past visits and ratings.
 
-## Dataset description
+## Dataset description (Data vary by rounds, below is round 9)
 - Dataset is downloaded from [**Yelp Dataset Challenge**](https://www.yelp.com/dataset_challenge).
-    - These files contain complete loan data for all loans issued in 2018Q1, including the current loan status (Current, Late, Fully Paid, etc.) and latest payment information. 
-    - The file containing loan data through the "present" contains complete loan data for all loans issued through the previous completed calendar quarter. 
-    - 'LoanStats_2018Q1.csv' contains loan application records from January 2018 to March 2018.
-        - 107866 loan applications.
-        - 145 features.
-    - [**Data is available here**](https://github.com/will-zw-wang/Lending_Club-Default_Prediction_and_Interest_Rate_Prediction_and_Loan_Grade_Prediction/blob/master/data/LoanStats_2018Q1.csv.zip)
-- I classify all 145 features into eight types:
-    - User feature (general)
-    - User feature (financial specific)
-        - Income
-        - Credit scores
-        - Credit lines
-    - Loan general feature
-    - Current loan payment feature
-    - Potential response variables
-    - Secondary applicant info
-    - Hardship 
-    - Settlement
-    - [**Grouped features dictionary is available here**](https://github.com/will-zw-wang/Lending_Club-Default_Prediction_and_Interest_Rate_Prediction_and_Loan_Grade_Prediction/blob/master/data/LC_DataDictionary.xlsx)
+    - The Challenge Dataset:
+        - 4.1M reviews and 947K tips by 1M users for 144K businesses
+        - 1.1M business attributes, e.g., hours, parking availability, ambience.
+        - Aggregated check-ins over time for each of the 125K businesses
+        - 200,000 pictures from the included businesses
+    - Cities:
+        - U.K.: Edinburgh
+        - Germany: Karlsruhe
+        - Canada: Montreal and Waterloo
+        - U.S.: Pittsburgh, Charlotte, Urbana-Champaign, Phoenix, Las Vegas, Madison, Cleveland
+    - Files:
+        - yelp_academic_dataset_business.json
+        - yelp_academic_dataset_checkin.json
+        - yelp_academic_dataset_review.json
+        - yelp_academic_dataset_tip.json
+        - yelp_academic_dataset_user.json
+        - **Note**: Each file is composed of a single object type, one json-object per-line.
+
