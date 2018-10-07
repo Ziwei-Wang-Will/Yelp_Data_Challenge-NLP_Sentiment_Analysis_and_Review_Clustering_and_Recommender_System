@@ -83,7 +83,7 @@
 - Classifying positive/negative review
     - **Basic model with cross validation**
         - We tried to perform cross validation to evaluate basic model.
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="500" height="120"> 
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="500" height="140"> 
         - The performance of **KNN** is the weakest. 
         - The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
         - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
