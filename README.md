@@ -44,7 +44,7 @@
 
 ## Analysis Structure
 1. Data Preprocessing
-2. 
+2. NLP and Sentiment Classification
 
 
 ## Analysis Details
@@ -67,3 +67,27 @@
         - We plotted the distribution of text length of 5 stars and that of less than 5 stars
             - Two distribution are slightly different, longer texts appeared more when stars is less than 5 compared with when stars is 5, which means longer texts do not stand for good rating. Perhaps because customers write more to complain rather than praise.
 - [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Data%20Preprocessing.ipynb)
+
+### 2. NLP and Sentiment Classification
+- Define feature variables and target variable
+    - Feature variables: customer reviews
+    - Target variable: 
+        - positive review: 5 stars review
+        - negative review: less than 5 stars review
+- Get NLP representation of the documents
+    - Tokenization
+    - Remove stop words
+    - Lemmatization
+    - Generate vocabulary
+    - Generate TF-IDF Matrix
+- Classifying positive/negative review
+    - Basic model performance comparison
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="600" height="240"> 
+
+
+
+
+
+
+
+
