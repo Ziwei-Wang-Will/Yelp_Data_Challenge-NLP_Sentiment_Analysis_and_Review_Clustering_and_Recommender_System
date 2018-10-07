@@ -81,7 +81,14 @@
     - Generate vocabulary
     - Generate TF-IDF Matrix
 - Classifying positive/negative review
-    - Basic model performance comparison
+    - **Basic model performance comparison**
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="400" height="160"> 
+        - The performance of **KNN** is the weakest. The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
+        - In **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
+        - However, in the **Random Forest** model, the difference is more significant compared to the results from **Logistic Regression** and **Naive-Bayes models**. 
+            - It indicated that Random Forest, in fact, can't generalized the results to the unseen data (or testing data) very well, and is a high-variance model for this project instance.
+    - **Models with cross validation comparison**
+        - We tried performing cross validation for these models to improve the their performances.
         - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="400" height="160"> 
 
 
