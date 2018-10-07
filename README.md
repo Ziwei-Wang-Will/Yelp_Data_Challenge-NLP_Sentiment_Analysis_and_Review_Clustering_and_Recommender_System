@@ -2,7 +2,7 @@
 
 <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_and_Clustering_and_Sentiment_Classification_and_Recommender_System/blob/master/images/Yelp_image.jpg" width="660" height="200">
 
-[**Code**](pending)
+[**Code**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/tree/master/code)
 
 ## Project Objectives
 
@@ -51,9 +51,19 @@
 
 ### 1. Data Preprocessing
 - Extracted target data
-    - created filters that selects business:
-        - that are located in "Las Vegas"
-        - that contains "Restaurants" in their category
-    - merged with review data on "business_id"
-    - Further filtered data by date: 
-        - reviews between '2015-07-01' and '2018-01-01'
+    - Filtered business that are located in "Las Vegas" and contains "Restaurants" in their category.
+    - Merged business information with review data based on "business_id".
+    - Further filtered reviews by date between '2015-07-01' and '2018-01-01'
+- Exploratory data analysis (EDA)
+    - Bar plots findings
+        - Most of business entities have reviewed from 1 to 250 times.
+        - Most of business entities scored around 4.0 stars on average.
+        - In most of time, the lengths for most reviews are within 1000.
+        - 'Hash House A Go Go' is the top business entities with most comments in Las Vegas.
+    - Line plots findings
+        - We plotted the number of reviews by month
+            - The plot had a general upward trend developed from Jan, 2015 to Dec, 2017. 
+            - Moreover, three peaks were appeard on the same month (July), perhaps because of the summer vacation, more poeple went to restaurants and left reviews.
+        - We plotted the distribution of text length of 5 stars and that of less than 5 stars
+            - Two distribution are slightly different, longer texts appeared more when stars is less than 5 compared with when stars is 5, which means longer texts do not stand for good rating. Perhaps because customers write more to complain rather than praise.
+- [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Data%20Preprocessing.ipynb)
