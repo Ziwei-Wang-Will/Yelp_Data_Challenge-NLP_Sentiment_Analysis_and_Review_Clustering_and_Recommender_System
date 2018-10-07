@@ -81,15 +81,22 @@
     - Generate vocabulary
     - Generate TF-IDF Matrix
 - Classifying positive/negative review
-    - **We tried to perform cross validation to evaluate basic model**
+    - **Basic model with cross validation**
+        - We tried to perform cross validation to evaluate basic model.
         - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="400" height="160"> 
-        - The performance of **KNN** is the weakest. The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
-        - In **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
+        - The performance of **KNN** is the weakest. 
+        - The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
+        - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
         - However, in the **Random Forest** model, the difference is more significant compared to the results from **Logistic Regression** and **Naive-Bayes models**. 
             - It indicated that Random Forest, in fact, can't generalized the results to the unseen data (or testing data) very well, and is a high-variance model for this project instance.
-    - **Models with cross validation comparison**
-        - We tried performing cross validation for these models to improve the their performances.
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/basic_model_performance_comparison.png" width="400" height="160"> 
+    - **Models with grid search**
+        - We tried grid search for these models to find the best predictable classifier
+        - <img src=" " width="400" height="160"> 
+        - The performance of models with grid_search are very close to those of basic models, which indicate our baisc models have already performed greatly in this dataset and hard for the models with grid_search to perform better.
+    - **Models with standardized tf-idf vectors and with (Stardardized + PCA) tf-idf vectors**
+        -  We tried standardization and PCA to see if we can improve the model performace.
+        - <img src=" " width="400" height="160"> 
+        - 
 
 
 
