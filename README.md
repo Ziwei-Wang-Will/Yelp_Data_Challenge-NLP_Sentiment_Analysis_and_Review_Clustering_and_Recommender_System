@@ -12,7 +12,7 @@
     - Used **Naive Bayes**, **Logistic Regression**, and **Random Forests** with a self-defined metric.
     - After the model fitting, gained insights about what words usually contribute to the negative or positive review. 
     - A restaurant can summarize what's the main aspects the customers care about, so that make corresponding improvement to attract more customers.
-- 2. **Cluster reviews into groups**. 
+- 2. **Clustered reviews into groups**. 
     - Used NPL techniques, such as **stemming**, **lemmatization** and **TF-IDF**, to extract features from unstructured review text data.
     - Used **KMeans**. 
     - Clustered positive reviews of all business in "Las Vegas" into groups
@@ -83,7 +83,7 @@
 - Classifying positive/negative review
     - **Basic model with cross validation**
         - We tried to perform cross validation to evaluate basic model.
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="400" height="160"> 
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="500" height="160"> 
         - The performance of **KNN** is the weakest. 
         - The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
         - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
