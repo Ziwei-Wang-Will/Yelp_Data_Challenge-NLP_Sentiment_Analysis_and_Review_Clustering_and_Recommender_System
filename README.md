@@ -1,6 +1,6 @@
 # Yelp_Data_Challenge
 
-<img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_and_Clustering_and_Sentiment_Classification_and_Recommender_System/blob/master/images/Yelp_image.jpg" width="660" height="200">
+<img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_and_Clustering_and_Sentiment_Classification_and_Recommender_System/blob/master/images/Yelp_image.jpg" width="500" height="200">
 
 [**Code**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/tree/master/code)
 
