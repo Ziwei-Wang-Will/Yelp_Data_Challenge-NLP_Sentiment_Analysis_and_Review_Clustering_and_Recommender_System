@@ -220,7 +220,7 @@
     - Then we tried to get final recommendations for a user: user_number = 100, and our **UVD recommender** recommended top 10 restaurants: 
       - [933, 599, 1083, 1752, 673, 2108, 1154, 1629, 1891, 374]
       - With an **average absolute error** of **0.5461**, which was slightly better than **0.6795** of **NMF**.
-- [**Detailed Code**](pending) 
+- [**Detailed Code**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Restaurant%20Recommender.ipynb) 
 
 ### 6. Recommendation Results Analysis and Insights
 - **Recommendation results Analysis between different recommendation systems**
