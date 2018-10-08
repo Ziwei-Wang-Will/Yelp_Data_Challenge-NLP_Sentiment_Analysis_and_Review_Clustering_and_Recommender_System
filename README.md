@@ -46,7 +46,8 @@
 1. Data Preprocessing
 2. NLP and Sentiment Classification
 3. Review Clustering
-
+4. Other user cases for clustering
+    
 
 ## Analysis Details
 
@@ -100,7 +101,7 @@
         - 
 ### 3. Review Clustering
 - **Clustered positive reviews of all business in "Las Vegas" into groups**
-    - Cluster reviews with KMeans, k = 8(default)
+    - **Cluster reviews with KMeans, k = 8(default)**
         - Inspect the centroids
             - (1) Sort each centroid vector to find the top 10 features
             - (2) Go back to our vectorizer object to find out what words each of these features corresponds to
@@ -116,7 +117,7 @@
         - We then tried different k, because:
             - Using eight clusters (default setting in kmeans), I found that several clusters are kind of similar to each other, such as in Cluster 0 and 7 might signify fast food restaurants. 
             - The rest of clusters have some significant meanings such as in Cluster 6, it mainly tell about Japanese restaurants.
-    - Cluster reviews with KMeans, k = 5
+    - **Cluster reviews with KMeans, k = 5**
         - Inspect the centroids
             - top 10 features for each cluster:
                 - 0: good,food,really,place,service,great,nice,love,chicken,time
@@ -124,22 +125,60 @@
                 - 2: sushi,place,roll,rolls,great,fresh,ayce,service,best,fish
                 - 3: pizza,great,place,crust,good,best,love,service,vegas,cheese
                 - 4: great,food,service,place,amazing,awesome,friendly,excellent,staff,definitely
-        - Using five clusters, the difference among clusters stands out more significant than using eight clusters. Each cluster now has an unique topic, such as Cluster 0 is surrounding with the topic of chicken, Cluster 2 is relating to Japanese food, Cluster 3 is relating to the pizza, and Cluster 4 is mainly about service aspect in vegas.
-        - However, the top features using five clusters seem to be highly overlapped with the default method. In fact, it's a good strategy to narrow down overlapped clusters into denser clusters.
+        - Summary
+            - Using five clusters, the difference among clusters stands out more significant than using eight clusters. Each cluster now has an unique topic, such as Cluster 0 is surrounding with the topic of chicken, Cluster 2 is relating to Japanese food, Cluster 3 is relating to the pizza, and Cluster 4 is mainly about service aspect in vegas.
+            - However, the top features using five clusters seem to be highly overlapped with the default method. In fact, it's a good strategy to narrow down overlapped clusters into denser clusters.
 - **Clustered reviews of the most reviewed restaurant in "Las Vegas" into groups**
-    - Cluster reviews with KMeans, k = 4
+    - **Cluster reviews with KMeans, k = 4**
         - Inspect the centroids
             - top 10 features for each cluster:
                 - 0: chicken, waffles, fried, sage, bacon, benedict, good, food, place, huge
                 - 1: food, minutes, wait, time, just, service, good, took, order, table
                 - 2: hash, good, breakfast, food, house, eggs, pancake, place, potatoes, huge
                 - 3: great, food, portions, place, service, huge, wait, good, vegas, amazing
-        - Using four clusters, the difference among clusters stands out significantly and each cluster now has an unique topic, shows different aspects that customers care about:
-            - Cluster 0 is surrounding with the topic of food, like chicken and waffles. 
-            - Cluster 1 is surrounding with the topic of waiting time and service.
-            - Cluster 2 is relating to the breakfast, like eggs and pancake. 
-            - Cluster 3 is mainly about the taste and nutritional value.
+        - Summary
+            - Using four clusters, the difference among clusters stands out significantly and each cluster now has an unique topic, shows different aspects that customers care about:
+                - Cluster 0 is surrounding with the topic of food, like chicken and waffles. 
+                - Cluster 1 is surrounding with the topic of waiting time and service.
+                - Cluster 2 is relating to the breakfast, like eggs and pancake. 
+                - Cluster 3 is mainly about the taste and nutritional value.
 
+### 4. Other user cases for clustering
+- **Cluster restaurants by category information**
+    - **Note:** a business may have mutiple categories, e.g. a restaurant can have both "Restaurants" and "Korean"
+    - Inspect the centroids
+            - top 10 features for each cluster:
+                - 0: restaurants, food, mexican, chinese, thai, barbeque, asian, seafood, fusion, japanese
+                - 1: bars, nightlife, sushi, restaurants, japanese, american, wine, new, cocktail, seafood
+                - 2: pizza, italian, restaurants, sandwiches, wings, chicken, salad, food, seafood, delis
+                - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
+                - 4: american, traditional, new, burgers, restaurants, food, steakhouses, fast, seafood, southern
+    - Summary
+        - Cluster restaurants from their category information, the difference among clusters is significant. 
+        - Each cluster now has an unique topic, such as Cluster 0 is mainly about Mexican and Chinese, Cluster 1 is Japanese, Cluster 2 is Italian,  Cluster 3 is American breakfast, and Cluster 4 is American(Traditional) in vegas.            
+- **Cluster restaurants by restaurant names**
+    - We clustered categories from business entities and tried to find the similarity between restaurant names.
+    - Inspect the centroids
+            - top 10 features for each cluster:
+                - 0: restaurants, food, american, mexican, burgers, chinese, new, traditional, fast, seafood
+                - 1: japanese, sushi, bars, restaurants, fusion, asian, ramen, noodles, seafood, poke
+                - 2: bars, nightlife, american, restaurants, wine, new, cocktail, sports, traditional, mexican
+                - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
+                - 4: pizza, italian, restaurants, sandwiches, wings, salad, chicken, food, seafood, american
+    - Summary
+        - We notice the most used business names are very straight forword, telling the major business the entities are running.
+        - While I don't think these clusters are meaningful in distinguishing each other.
+- **Cluster restaurants by tips**
+    - As we have data **"tip.json"**, we can cluster the tips business entities to customers, to see whether different business entities emphasis different aspects of their business.
+    - Inspect the centroids
+            - top 10 features for each cluster:
+                - 0: great, food, service, place, staff, friendly, love, atmosphere, amazing, prices
+                - 1: place, love, time, amazing, food, service, try, don, delicious, like
+                - 2: awesome, food, service, place, great, staff, love, friendly, good, best
+                - 3: best, town, ve, place, vegas, food, pizza, service, love, hands
+                - 4: good, food, service, great, place, really, nice, pretty, friendly, prices
+    - Summary
+        - We notice that almost all business entities are using positive words in their tips, thus these clusters are not meaningful in distinguishing each other.
 
 
 
