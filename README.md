@@ -23,7 +23,7 @@
     - Used **collaborative filtering** and **matrix factorization** based on users’ past visits and ratings.
 
 ## Dataset description (Data vary by rounds, below is round 9)
-- Dataset is downloaded from [**Yelp Dataset Challenge**](https://www.yelp.com/dataset_challenge).
+- Dataset was downloaded from [**Yelp Dataset Challenge**](https://www.yelp.com/dataset_challenge).
     - The Challenge Dataset:
         - 4.1M reviews and 947K tips by 1M users for 144K businesses
         - 1.1M business attributes, e.g., hours, parking availability, ambience.
@@ -59,25 +59,25 @@
     - Further filtered reviews by date between '2015-07-01' and '2018-01-01'
 - Exploratory data analysis (EDA)
     - Bar plots findings
-        - Most of business entities have reviewed from 1 to 250 times.
+        - Most of business entities had reviewed from 1 to 250 times.
         - Most of business entities scored around 4.0 stars on average.
-        - In most of time, the lengths for most reviews are within 1000.
-        - 'Hash House A Go Go' is the top business entities with most comments in Las Vegas.
+        - In most of time, the lengths for most reviews were within 1000.
+        - 'Hash House A Go Go' was the top business entities with most comments in Las Vegas.
     - Line plots findings
         - We plotted the number of reviews by month
             - The plot had a general upward trend developed from Jul, 2015 to Dec, 2017. 
             - Moreover, three peaks were appeard on the same month (July), perhaps because of the summer vacation, more poeple went to restaurants and left reviews.
         - We plotted the distribution of text length of 5 stars and that of less than 5 stars
-            - Two distribution are slightly different, longer texts appeared more when stars is less than 5 compared with when stars is 5, which means longer texts do not stand for good rating. Perhaps because customers write more to complain rather than praise.
+            - Two distribution were slightly different, longer texts appeared more when stars was less than 5 compared with when stars is 5, which meant longer texts do not stand for good rating. Perhaps because customers writed more to complain rather than praise.
 - [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Data%20Preprocessing.ipynb)
 
 ### 2. NLP, Sentiment Classification Model Fitting and Models Comparison
-- Defineed feature variables and target variable
+- Defined feature variables and target variable
     - Feature variables: customer reviews
     - Target variable: 
         - positive review: 5 stars review
         - negative review: less than 5 stars review
-- Get NLP representation of the documents
+- Got NLP representation of the documents
     - Tokenization
     - Removed stop words
     - Lemmatization
@@ -152,84 +152,84 @@
 - **Clustered restaurants by category information**
     - **Note:** a business may have mutiple categories, e.g. a restaurant can have both "Restaurants" and "Korean"
     - Inspected the centroids
-            - top 10 features for each cluster:
-                - 0: restaurants, food, mexican, chinese, thai, barbeque, asian, seafood, fusion, japanese
-                - 1: bars, nightlife, sushi, restaurants, japanese, american, wine, new, cocktail, seafood
-                - 2: pizza, italian, restaurants, sandwiches, wings, chicken, salad, food, seafood, delis
-                - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
-                - 4: american, traditional, new, burgers, restaurants, food, steakhouses, fast, seafood, southern
+        - top 10 features for each cluster:
+            - 0: restaurants, food, mexican, chinese, thai, barbeque, asian, seafood, fusion, japanese
+            - 1: bars, nightlife, sushi, restaurants, japanese, american, wine, new, cocktail, seafood
+            - 2: pizza, italian, restaurants, sandwiches, wings, chicken, salad, food, seafood, delis
+            - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
+            - 4: american, traditional, new, burgers, restaurants, food, steakhouses, fast, seafood, southern
     - Summary
         - Clustered restaurants from their category information, the difference among clusters was significant. 
         - Each cluster now had an unique topic, such as Cluster 0 was mainly about Mexican and Chinese, Cluster 1 was Japanese, Cluster 2 was Italian,  Cluster 3 was American breakfast, and Cluster 4 was American(Traditional) in vegas.   
 - **Clustered restaurants by restaurant names**
     - We clustered categories from business entities and tried to find the similarity between restaurant names.
     - Inspected the centroids
-            - top 10 features for each cluster:
-                - 0: restaurants, food, american, mexican, burgers, chinese, new, traditional, fast, seafood
-                - 1: japanese, sushi, bars, restaurants, fusion, asian, ramen, noodles, seafood, poke
-                - 2: bars, nightlife, american, restaurants, wine, new, cocktail, sports, traditional, mexican
-                - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
-                - 4: pizza, italian, restaurants, sandwiches, wings, salad, chicken, food, seafood, american
+        - top 10 features for each cluster:
+            - 0: restaurants, food, american, mexican, burgers, chinese, new, traditional, fast, seafood
+            - 1: japanese, sushi, bars, restaurants, fusion, asian, ramen, noodles, seafood, poke
+            - 2: bars, nightlife, american, restaurants, wine, new, cocktail, sports, traditional, mexican
+            - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
+            - 4: pizza, italian, restaurants, sandwiches, wings, salad, chicken, food, seafood, american
     - Summary
         - We noticed the most used business names were very straight forword, telling the major business the entities were running.
         - While I don't think these clusters are meaningful in distinguishing each other.
 - **Cluster restaurants by tips**
     - As we had data **"tip.json"**, we clustered the tips business entities to customers, to see whether different business entities emphasis different aspects of their business.
     - Inspect the centroids
-            - top 10 features for each cluster:
-                - 0: great, food, service, place, staff, friendly, love, atmosphere, amazing, prices
-                - 1: place, love, time, amazing, food, service, try, don, delicious, like
-                - 2: awesome, food, service, place, great, staff, love, friendly, good, best
-                - 3: best, town, ve, place, vegas, food, pizza, service, love, hands
-                - 4: good, food, service, great, place, really, nice, pretty, friendly, prices
+        - top 10 features for each cluster:
+            - 0: great, food, service, place, staff, friendly, love, atmosphere, amazing, prices
+            - 1: place, love, time, amazing, food, service, try, don, delicious, like
+            - 2: awesome, food, service, place, great, staff, love, friendly, good, best
+            - 3: best, town, ve, place, vegas, food, pizza, service, love, hands
+            - 4: good, food, service, great, place, really, nice, pretty, friendly, prices
     - Summary
         - We noticed that almost all business entities are using positive words in their tips, thus these clusters were not meaningful in distinguishing each other.
 - [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Clustering.ipynb)
 
 ### 5. Recommender System Model Fitting and Models Comparison
-- **Clean data and create utility matrix**
-  - We build utility matrix with only users reviewed more than four times.
-  - For the removed or new users, we can recommend popular restaurants at first.
+- **Cleaned data and created utility matrix**
+  - We built utility matrix with only users reviewed more than four times.
+  - For the removed or new users, we could recommend popular restaurants at first.
 - **Build Recommender Systems**
   - **Popularity-based recommender**
     - We defined **popular** as restaurants with most reviewed records.
-    - For every new user or user reviewed less than four times, we build a **Popularity-based recommender** to recommend most popular restaurants at first. 
+    - For every new user or user reviewed less than four times, we built a **Popularity-based recommender** to recommend most popular restaurants at first. 
     - Our **Popularity-based recommender** recommended top 10 restaurants: 
       - [972, 920, 736, 51, 871, 718, 729, 921, 784, 651].
   - **Neighborhood-based Approach Collaborative Filtering Recommender：Item-Item similarity recommender**
     - For user reviewed more than four times, we tried **Neighborhood-based approach** to build an **Item-Item similarity recommender** here. 
-    - Given a user_id and recommend 10 restaurants which have the largest similarities with restaurants the user had reviewed before.
+    - Given a user_id and recommend 10 restaurants which had the largest similarities with restaurants the user had reviewed before.
     - We tried to get final recommendations for a user: user_number = 100, and our **Item-Item similarity recommender** recommended top 10 restaurants: 
       - [1469, 421, 2350, 2102, 618, 551, 2429, 1874, 1653, 1988]
       - With an **average absolute error** of **0.3467**.
-    - Then we tried to improve performance with **Matrix Factorization approach** to build recommender, because **matrix factorization models** always perform better than **neighborhood models** in **collaborative filtering**. 
+    - Then we tried to improve performance with **Matrix Factorization approach** to build recommender, because **matrix factorization models** always performs better than **neighborhood models** in **collaborative filtering**. 
       - **Reason**: 
         - The reason is when we factorize a ‘m*n’ matrix into two ‘m*k’ and ‘k*n’ matrices we are reducing our "n"items to "k"factors, which means that instead than having our 3000 restaurants, we now have 500 factors where each factor is a linear combination of restaurants. 
         - The key is that recommending based on factors is more robust than just using restaurant similarities, maybe a user hasn’t reviewed the restaurant ‘stay’ but the user might have reviewer other restaurants that are related to ‘stay’ via some latent factors and those can be used.
         - The factors are called latent because they are there in our data but are not really discovered until we run the reduced rank matrix factorization, then the factors emerge and hence the "latency".
   - **Matrix Factorization Approach Collaborative Filtering Recommender：NMF**
-    - The **RMSE** of **NMF** is **1.3494**, and the **average absolute error** is **0.6121**, the performance is acceptable. 
+    - The **RMSE** of **NMF** was **2.0848**, and the **average absolute error** was **1.1285**, the performance was acceptable. 
     - We tried to get final recommendations for a user: user_number = 100, and our **NMF** recommender recommended top 10 restaurants: 
-      - [51347, 51348, 41708, 1170, 11460, 1666, 7873, 7144, 10250, 6837]
-      - With an **average absolute error** of **0.0137**.
-    - The same as what we discussed above, the **average absolute error** of **NMF** for this specific user is better than **0.9656** of **Item-Item similarity recommender**.
+      - [168, 1463, 361, 1892, 1208, 1629, 940, 1500, 2108, 227]
+      - With an **average absolute error** of **0.6795**.
+    - The result was slightly different from what we discussed above, the average absolute error of **NMF** with 0.6795 for this specific user was slightly worse than 0.3467 of **Item-Item similarity** recommender, perhaps because the size of our dataset with 3000+ restaurants was too small to show the advantage of **NMF**.
     - Then we tried **UVD** to verify whether it performs better than **NMF**.
   - **Matrix Factorization Approach Collaborative Filtering Recommender：UVD**
-    - The **RMSE** of **UVD** is **1.1729** and the **average absolute error** is **0.5569**, which are better than scores of **NMF**(**1.3494** and **0.6121**). 
-      - **Reason**: **UVD** performs better because it has larger degree of freedom than **NMF**, to be specific, **NMF** is a specialization of **UVD**, all values of V, W, and H in **NMF** must be non-negative.
+    - The **RMSE** of **UVD** was **1.8733** and the **average absolute error** was **1.0795**, which were better than scores of **NMF**(**2.0848** and **1.1285**). 
+      - **Reason**: **UVD** performed better because it has larger degree of freedom than **NMF**, to be specific, **NMF** is a specialization of **UVD**, all values of V, W, and H in **NMF** must be non-negative.
     - Then we tried to get final recommendations for a user: user_number = 100, and our **UVD recommender** recommended top 10 restaurants: 
-      - [10718, 6837, 4440, 10605, 21281, 1170, 21562, 51347, 51348, 6422]
-      - With an **average absolute error** of **0.0391**, which is very close to **0.0137** of **NMF**.
+      - [933, 599, 1083, 1752, 673, 2108, 1154, 1629, 1891, 374]
+      - With an **average absolute error** of **0.5461**, which was slightly better than **0.6795** of **NMF**.
 - [**Detailed Code**](pending) 
 
 ### 6. Recommendation Results Analysis and Insights
 - **Recommendation results Analysis between different recommendation systems**
   - We generated the overlap tables of the **top_10** and **top_100** results given by the four models for 'user with user_number = 100' as below:
-    - <img src="https://github.com/will-zw-wang/Music_box-Churn_Prediction_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%2010%20recommendation%20generated%20by%20these%20four%20models.png">
-    - <img src="https://github.com/will-zw-wang/Music_box-Churn_Prediction_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%20100%20recommendation%20generated%20by%20these%20four%20models.png">
+    - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%2010%20recommendation%20generated%20by%20these%20four%20models.png">
+    - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%20100%20recommendation%20generated%20by%20these%20four%20models.png">
   - From the overlap tables above, we notice that:
-    - The recommended restaurants given by **Popularity-based**, **Neighborhood-based approach** and **Matrix Factorization approach** models are very different from each other, have no overlap in top 10 and only 3 overlaps in top 100 recommended restaurants.
-    - While the recommended restaurants given by **NMF** and **UVD** have 4 overlaps in top 10 and 66 overlaps in top 100 recommended restaurants.
+    - The recommended restaurants given by **Popularity-based**, **Neighborhood-based approach** and **Matrix Factorization approach** models were very different from each other, had no overlap in top 10 and only 2 overlaps in top 100 recommended restaurants.
+    - While the recommended restaurants given by **NMF** and **UVD** had 2 overlaps in top 10 and 40 overlaps in top 100 recommended restaurants.
 - **Conclusion**
   - 1. For **new user or user reviewed less than four times**, we can recommend most popular restaurants at first generated by our **Popularity-based recommender**.
   - 2. For **user reviewed more than four times**:
