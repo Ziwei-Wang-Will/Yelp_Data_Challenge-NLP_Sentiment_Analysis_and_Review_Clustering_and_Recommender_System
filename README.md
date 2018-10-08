@@ -45,6 +45,7 @@
 ## Analysis Structure
 1. Data Preprocessing
 2. NLP and Sentiment Classification
+3. Review Clustering
 
 
 ## Analysis Details
@@ -62,7 +63,7 @@
         - 'Hash House A Go Go' is the top business entities with most comments in Las Vegas.
     - Line plots findings
         - We plotted the number of reviews by month
-            - The plot had a general upward trend developed from Jan, 2015 to Dec, 2017. 
+            - The plot had a general upward trend developed from Jul, 2015 to Dec, 2017. 
             - Moreover, three peaks were appeard on the same month (July), perhaps because of the summer vacation, more poeple went to restaurants and left reviews.
         - We plotted the distribution of text length of 5 stars and that of less than 5 stars
             - Two distribution are slightly different, longer texts appeared more when stars is less than 5 compared with when stars is 5, which means longer texts do not stand for good rating. Perhaps because customers write more to complain rather than praise.
@@ -97,6 +98,49 @@
         -  We tried standardization and PCA to see if we can improve the model performace.
         - <img src=" " width="400" height="160"> 
         - 
+### 3. Review Clustering
+- **Clustered positive reviews of all business in "Las Vegas" into groups**
+    - Cluster reviews with KMeans, k = 8(default)
+        - Inspect the centroids
+            - (1) Sort each centroid vector to find the top 10 features
+            - (2) Go back to our vectorizer object to find out what words each of these features corresponds to
+            - top 10 features for each cluster:
+                - 0: burger, fries, burgers, good, great, place, cheese, best, shake, food
+                - 1: food, good, place, best, vegas, amazing, delicious, time, service, just
+                - 2: excellent, service, food, great, place, good, vegas, definitely, restaurant, best
+                - 3: love, place, food, great, good, service, amazing, best, friendly, staff
+                - 4: pizza, great, crust, place, good, best, vegas, cheese, service, delicious
+                - 5: great, food, service, place, amazing, good, awesome, friendly, staff, definitely
+                - 6: sushi, place, roll, rolls, great, fresh, ayce, service, best, fish
+                - 7: chicken, fried, good, food, rice, place, delicious, great, ordered, amazing
+        - We then tried different k, because:
+            - Using eight clusters (default setting in kmeans), I found that several clusters are kind of similar to each other, such as in Cluster 0 and 7 might signify fast food restaurants. 
+            - The rest of clusters have some significant meanings such as in Cluster 6, it mainly tell about Japanese restaurants.
+    - Cluster reviews with KMeans, k = 5
+        - Inspect the centroids
+            - top 10 features for each cluster:
+                - 0: good,food,really,place,service,great,nice,love,chicken,time
+                - 1: place,food,best,vegas,delicious,amazing,time,love,ve,just
+                - 2: sushi,place,roll,rolls,great,fresh,ayce,service,best,fish
+                - 3: pizza,great,place,crust,good,best,love,service,vegas,cheese
+                - 4: great,food,service,place,amazing,awesome,friendly,excellent,staff,definitely
+        - Using five clusters, the difference among clusters stands out more significant than using eight clusters. Each cluster now has an unique topic, such as Cluster 0 is surrounding with the topic of chicken, Cluster 2 is relating to Japanese food, Cluster 3 is relating to the pizza, and Cluster 4 is mainly about service aspect in vegas.
+        - However, the top features using five clusters seem to be highly overlapped with the default method. In fact, it's a good strategy to narrow down overlapped clusters into denser clusters.
+- **Clustered reviews of the most reviewed restaurant in "Las Vegas" into groups**
+    - Cluster reviews with KMeans, k = 4
+        - Inspect the centroids
+            - top 10 features for each cluster:
+                - 0: chicken, waffles, fried, sage, bacon, benedict, good, food, place, huge
+                - 1: food, minutes, wait, time, just, service, good, took, order, table
+                - 2: hash, good, breakfast, food, house, eggs, pancake, place, potatoes, huge
+                - 3: great, food, portions, place, service, huge, wait, good, vegas, amazing
+        - Using four clusters, the difference among clusters stands out significantly and each cluster now has an unique topic, shows different aspects that customers care about:
+            - Cluster 0 is surrounding with the topic of food, like chicken and waffles. 
+            - Cluster 1 is surrounding with the topic of waiting time and service.
+            - Cluster 2 is relating to the breakfast, like eggs and pancake. 
+            - Cluster 3 is mainly about the taste and nutritional value.
+
+
 
 
 
