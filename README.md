@@ -71,40 +71,40 @@
 - [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Data%20Preprocessing.ipynb)
 
 ### 2. NLP and Sentiment Classification
-- Define feature variables and target variable
+- Defineed feature variables and target variable
     - Feature variables: customer reviews
     - Target variable: 
         - positive review: 5 stars review
         - negative review: less than 5 stars review
 - Get NLP representation of the documents
     - Tokenization
-    - Remove stop words
+    - Removed stop words
     - Lemmatization
-    - Generate vocabulary
-    - Generate TF-IDF Matrix
-- Classifying positive/negative review
+    - Generated vocabulary
+    - Generated TF-IDF Matrix
+- Classified positive/negative review
     - **Basic model with cross validation**
         - We tried to perform cross validation to evaluate basic model.
         - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="500" height="140"> 
-        - The performance of **KNN** is the weakest. 
-        - The trainng score and the test score of the other three models are comparable, seems no negative impact of overfitting. 
-        - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score is extremely close. 
-        - However, in the **Random Forest** model, the difference is more significant compared to the results from **Logistic Regression** and **Naive-Bayes models**. 
-            - It indicated that Random Forest, in fact, can't generalized the results to the unseen data (or testing data) very well, and is a high-variance model for this project instance.
+        - The performance of **KNN** was the weakest. 
+        - The trainng score and the test score of the other three models were comparable, seems no negative impact of overfitting. 
+        - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score was extremely close. 
+        - However, in the **Random Forest** model, the difference was more significant compared to the results from **Logistic Regression** and **Naive-Bayes models**. 
+            - It indicated that Random Forest, in fact, couldn't generalized the results to the unseen data (or testing data) very well, and was a high-variance model for this project instance.
     - **Models with grid search**
         - We tried grid search for these models to find the best predictable classifier
         - <img src=" " width="400" height="160"> 
-        - The performance of models with grid_search are very close to those of basic models, which indicate our baisc models have already performed greatly in this dataset and hard for the models with grid_search to perform better.
+        - The performance of models with grid_search were very close to those of basic models, which indicated our baisc models had already performed greatly in this dataset and hard for the models with grid_search to perform better.
     - **Models with standardized tf-idf vectors and with (Stardardized + PCA) tf-idf vectors**
-        -  We tried standardization and PCA to see if we can improve the model performace.
+        -  We tried standardization and PCA to see if we could improve the model performace.
         - <img src=" " width="400" height="160"> 
         - 
 ### 3. Review Clustering
 - **Clustered positive reviews of all business in "Las Vegas" into groups**
-    - **Cluster reviews with KMeans, k = 8(default)**
-        - Inspect the centroids
-            - (1) Sort each centroid vector to find the top 10 features
-            - (2) Go back to our vectorizer object to find out what words each of these features corresponds to
+    - **Clustered reviews with KMeans, k = 8(default)**
+        - Inspected the centroids
+            - (1) Sorted each centroid vector to find the top 10 features
+            - (2) Went back to our vectorizer object to find out what words each of these features corresponds to
             - top 10 features for each cluster:
                 - 0: burger, fries, burgers, good, great, place, cheese, best, shake, food
                 - 1: food, good, place, best, vegas, amazing, delicious, time, service, just
@@ -115,10 +115,10 @@
                 - 6: sushi, place, roll, rolls, great, fresh, ayce, service, best, fish
                 - 7: chicken, fried, good, food, rice, place, delicious, great, ordered, amazing
         - We then tried different k, because:
-            - Using eight clusters (default setting in kmeans), I found that several clusters are kind of similar to each other, such as in Cluster 0 and 7 might signify fast food restaurants. 
-            - The rest of clusters have some significant meanings such as in Cluster 6, it mainly tell about Japanese restaurants.
-    - **Cluster reviews with KMeans, k = 5**
-        - Inspect the centroids
+            - Using eight clusters (default setting in kmeans), I found that several clusters were kind of similar to each other, such as in Cluster 0 and 7 might signified fast food restaurants. 
+            - The rest of clusters had some significant meanings such as in Cluster 6, it mainly told about Japanese restaurants.
+    - **Clustered reviews with KMeans, k = 5**
+        - Inspected the centroids
             - top 10 features for each cluster:
                 - 0: good,food,really,place,service,great,nice,love,chicken,time
                 - 1: place,food,best,vegas,delicious,amazing,time,love,ve,just
@@ -126,27 +126,28 @@
                 - 3: pizza,great,place,crust,good,best,love,service,vegas,cheese
                 - 4: great,food,service,place,amazing,awesome,friendly,excellent,staff,definitely
         - Summary
-            - Using five clusters, the difference among clusters stands out more significant than using eight clusters. Each cluster now has an unique topic, such as Cluster 0 is surrounding with the topic of chicken, Cluster 2 is relating to Japanese food, Cluster 3 is relating to the pizza, and Cluster 4 is mainly about service aspect in vegas.
-            - However, the top features using five clusters seem to be highly overlapped with the default method. In fact, it's a good strategy to narrow down overlapped clusters into denser clusters.
+            - Using five clusters, the difference among clusters standed out more significant than using eight clusters. Each cluster now had an unique topic, such as Cluster 0 was surrounding with the topic of chicken, Cluster 2 was relating to Japanese food, Cluster 3 was relating to the pizza, and Cluster 4 was mainly about service aspect in vegas.
+            - However, the top features using five clusters seemed to be highly overlapped with the default method. 
+                - In fact, it was a good strategy to narrow down overlapped clusters into denser clusters.
 - **Clustered reviews of the most reviewed restaurant in "Las Vegas" into groups**
-    - **Cluster reviews with KMeans, k = 4**
-        - Inspect the centroids
+    - **Clustered reviews with KMeans, k = 4**
+        - Inspected the centroids
             - top 10 features for each cluster:
                 - 0: chicken, waffles, fried, sage, bacon, benedict, good, food, place, huge
                 - 1: food, minutes, wait, time, just, service, good, took, order, table
                 - 2: hash, good, breakfast, food, house, eggs, pancake, place, potatoes, huge
                 - 3: great, food, portions, place, service, huge, wait, good, vegas, amazing
         - Summary
-            - Using four clusters, the difference among clusters stands out significantly and each cluster now has an unique topic, shows different aspects that customers care about:
-                - Cluster 0 is surrounding with the topic of food, like chicken and waffles. 
-                - Cluster 1 is surrounding with the topic of waiting time and service.
-                - Cluster 2 is relating to the breakfast, like eggs and pancake. 
-                - Cluster 3 is mainly about the taste and nutritional value.
+            - Using four clusters, the difference among clusters standed out significantly and each cluster now had an unique topic, showed different aspects that customers care about:
+                - Cluster 0 was surrounding with the topic of food, liked chicken and waffles. 
+                - Cluster 1 was surrounding with the topic of waiting time and service.
+                - Cluster 2 was relating to the breakfast, liked eggs and pancake. 
+                - Cluster 3 was mainly about the taste and nutritional value.
 
 ### 4. Other User Cases of Clustering
-- **Cluster restaurants by category information**
+- **Clustered restaurants by category information**
     - **Note:** a business may have mutiple categories, e.g. a restaurant can have both "Restaurants" and "Korean"
-    - Inspect the centroids
+    - Inspected the centroids
             - top 10 features for each cluster:
                 - 0: restaurants, food, mexican, chinese, thai, barbeque, asian, seafood, fusion, japanese
                 - 1: bars, nightlife, sushi, restaurants, japanese, american, wine, new, cocktail, seafood
@@ -154,11 +155,11 @@
                 - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
                 - 4: american, traditional, new, burgers, restaurants, food, steakhouses, fast, seafood, southern
     - Summary
-        - Cluster restaurants from their category information, the difference among clusters is significant. 
-        - Each cluster now has an unique topic, such as Cluster 0 is mainly about Mexican and Chinese, Cluster 1 is Japanese, Cluster 2 is Italian,  Cluster 3 is American breakfast, and Cluster 4 is American(Traditional) in vegas.            
-- **Cluster restaurants by restaurant names**
+        - Clustered restaurants from their category information, the difference among clusters was significant. 
+        - Each cluster now had an unique topic, such as Cluster 0 was mainly about Mexican and Chinese, Cluster 1 was Japanese, Cluster 2 was Italian,  Cluster 3 was American breakfast, and Cluster 4 was American(Traditional) in vegas.   
+- **Clustered restaurants by restaurant names**
     - We clustered categories from business entities and tried to find the similarity between restaurant names.
-    - Inspect the centroids
+    - Inspected the centroids
             - top 10 features for each cluster:
                 - 0: restaurants, food, american, mexican, burgers, chinese, new, traditional, fast, seafood
                 - 1: japanese, sushi, bars, restaurants, fusion, asian, ramen, noodles, seafood, poke
@@ -166,10 +167,10 @@
                 - 3: breakfast, brunch, american, restaurants, traditional, sandwiches, food, new, buffets, diners
                 - 4: pizza, italian, restaurants, sandwiches, wings, salad, chicken, food, seafood, american
     - Summary
-        - We notice the most used business names are very straight forword, telling the major business the entities are running.
+        - We noticed the most used business names were very straight forword, telling the major business the entities were running.
         - While I don't think these clusters are meaningful in distinguishing each other.
 - **Cluster restaurants by tips**
-    - As we have data **"tip.json"**, we can cluster the tips business entities to customers, to see whether different business entities emphasis different aspects of their business.
+    - As we had data **"tip.json"**, we clustered the tips business entities to customers, to see whether different business entities emphasis different aspects of their business.
     - Inspect the centroids
             - top 10 features for each cluster:
                 - 0: great, food, service, place, staff, friendly, love, atmosphere, amazing, prices
@@ -178,7 +179,7 @@
                 - 3: best, town, ve, place, vegas, food, pizza, service, love, hands
                 - 4: good, food, service, great, place, really, nice, pretty, friendly, prices
     - Summary
-        - We notice that almost all business entities are using positive words in their tips, thus these clusters are not meaningful in distinguishing each other.
+        - We noticed that almost all business entities are using positive words in their tips, thus these clusters were not meaningful in distinguishing each other.
 
 
 
