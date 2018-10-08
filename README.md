@@ -46,7 +46,7 @@
 1. Data Preprocessing
 2. NLP and Sentiment Classification
 3. Review Clustering
-4. Other user cases for clustering
+4. Other User Cases of Clustering
     
 
 ## Analysis Details
@@ -143,7 +143,7 @@
                 - Cluster 2 is relating to the breakfast, like eggs and pancake. 
                 - Cluster 3 is mainly about the taste and nutritional value.
 
-### 4. Other user cases for clustering
+### 4. Other User Cases of Clustering
 - **Cluster restaurants by category information**
     - **Note:** a business may have mutiple categories, e.g. a restaurant can have both "Restaurants" and "Korean"
     - Inspect the centroids
