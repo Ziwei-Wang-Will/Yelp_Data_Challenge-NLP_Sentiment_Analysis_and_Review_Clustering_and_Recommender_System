@@ -44,9 +44,10 @@
 
 ## Analysis Structure
 1. Data Preprocessing
-2. NLP and Sentiment Classification
+2. NLP, Sentiment Classification Model Fitting and Models Comparison
 3. Review Clustering
 4. Other User Cases of Clustering
+5. Recommender System Model Fitting and Models Comparison
     
 
 ## Analysis Details
@@ -70,7 +71,7 @@
             - Two distribution are slightly different, longer texts appeared more when stars is less than 5 compared with when stars is 5, which means longer texts do not stand for good rating. Perhaps because customers write more to complain rather than praise.
 - [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Data%20Preprocessing.ipynb)
 
-### 2. NLP and Sentiment Classification
+### 2. NLP, Sentiment Classification Model Fitting and Models Comparison
 - Defineed feature variables and target variable
     - Feature variables: customer reviews
     - Target variable: 
@@ -99,6 +100,8 @@
         -  We tried standardization and PCA to see if we could improve the model performace.
         - <img src=" " width="400" height="160"> 
         - 
+- [**Detailed Code and Plotting**](pending)
+
 ### 3. Review Clustering
 - **Clustered positive reviews of all business in "Las Vegas" into groups**
     - **Clustered reviews with KMeans, k = 8(default)**
@@ -143,6 +146,7 @@
                 - Cluster 1 was surrounding with the topic of waiting time and service.
                 - Cluster 2 was relating to the breakfast, liked eggs and pancake. 
                 - Cluster 3 was mainly about the taste and nutritional value.
+- [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Clustering.ipynb)
 
 ### 4. Other User Cases of Clustering
 - **Clustered restaurants by category information**
@@ -180,8 +184,58 @@
                 - 4: good, food, service, great, place, really, nice, pretty, friendly, prices
     - Summary
         - We noticed that almost all business entities are using positive words in their tips, thus these clusters were not meaningful in distinguishing each other.
+- [**Detailed Code and Plotting**](https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/code/Yelp_Data_Challenge%20-%20Clustering.ipynb)
 
+### 5. Recommender System Model Fitting and Models Comparison
+- **Clean data and create utility matrix**
+  - We build utility matrix with only users reviewed more than four times.
+  - For the removed or new users, we can recommend popular restaurants at first.
+- **Build Recommender Systems**
+  - **Popularity-based recommender**
+    - We defined **popular** as restaurants with most reviewed records.
+    - For every new user or user reviewed less than four times, we build a **Popularity-based recommender** to recommend most popular restaurants at first. 
+    - Our **Popularity-based recommender** recommended top 10 restaurants: 
+      - [972, 920, 736, 51, 871, 718, 729, 921, 784, 651].
+  - **Neighborhood-based Approach Collaborative Filtering Recommender：Item-Item similarity recommender**
+    - For user reviewed more than four times, we tried **Neighborhood-based approach** to build an **Item-Item similarity recommender** here. 
+    - Given a user_id and recommend 10 restaurants which have the largest similarities with restaurants the user had reviewed before.
+    - We tried to get final recommendations for a user: user_number = 100, and our **Item-Item similarity recommender** recommended top 10 restaurants: 
+      - [1469, 421, 2350, 2102, 618, 551, 2429, 1874, 1653, 1988]
+      - With an **average absolute error** of **0.3467**.
+    - Then we tried to improve performance with **Matrix Factorization approach** to build recommender, because **matrix factorization models** always perform better than **neighborhood models** in **collaborative filtering**. 
+      - **Reason**: 
+        - The reason is when we factorize a ‘m*n’ matrix into two ‘m*k’ and ‘k*n’ matrices we are reducing our "n"items to "k"factors, which means that instead than having our 3000 restaurants, we now have 500 factors where each factor is a linear combination of restaurants. 
+        - The key is that recommending based on factors is more robust than just using restaurant similarities, maybe a user hasn’t reviewed the restaurant ‘stay’ but the user might have reviewer other restaurants that are related to ‘stay’ via some latent factors and those can be used.
+        - The factors are called latent because they are there in our data but are not really discovered until we run the reduced rank matrix factorization, then the factors emerge and hence the "latency".
+  - **Matrix Factorization Approach Collaborative Filtering Recommender：NMF**
+    - The **RMSE** of **NMF** is **1.3494**, and the **average absolute error** is **0.6121**, the performance is acceptable. 
+    - We tried to get final recommendations for a user: user_number = 100, and our **NMF** recommender recommended top 10 restaurants: 
+      - [51347, 51348, 41708, 1170, 11460, 1666, 7873, 7144, 10250, 6837]
+      - With an **average absolute error** of **0.0137**.
+    - The same as what we discussed above, the **average absolute error** of **NMF** for this specific user is better than **0.9656** of **Item-Item similarity recommender**.
+    - Then we tried **UVD** to verify whether it performs better than **NMF**.
+  - **Matrix Factorization Approach Collaborative Filtering Recommender：UVD**
+    - The **RMSE** of **UVD** is **1.1729** and the **average absolute error** is **0.5569**, which are better than scores of **NMF**(**1.3494** and **0.6121**). 
+      - **Reason**: **UVD** performs better because it has larger degree of freedom than **NMF**, to be specific, **NMF** is a specialization of **UVD**, all values of V, W, and H in **NMF** must be non-negative.
+    - Then we tried to get final recommendations for a user: user_number = 100, and our **UVD recommender** recommended top 10 restaurants: 
+      - [10718, 6837, 4440, 10605, 21281, 1170, 21562, 51347, 51348, 6422]
+      - With an **average absolute error** of **0.0391**, which is very close to **0.0137** of **NMF**.
+- [**Detailed Code**](pending) 
 
+### 6. Recommendation Results Analysis, Insights and Next Step
+- **Recommendation results Analysis between different recommendation systems**
+  - We generated the overlap tables of the **top_10** and **top_100** results given by the four models for 'user with user_number = 100' as below:
+    - <img src="https://github.com/will-zw-wang/Music_box-Churn_Prediction_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%2010%20recommendation%20generated%20by%20these%20four%20models.png">
+    - <img src="https://github.com/will-zw-wang/Music_box-Churn_Prediction_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%20100%20recommendation%20generated%20by%20these%20four%20models.png">
+  - From the overlap tables above, we notice that:
+    - The recommended restaurants given by **Popularity-based**, **Neighborhood-based approach** and **Matrix Factorization approach** models are very different from each other, have no overlap in top 10 and only 3 overlaps in top 100 recommended restaurants.
+    - While the recommended restaurants given by **NMF** and **UVD** have 4 overlaps in top 10 and 66 overlaps in top 100 recommended restaurants.
+- **Conclusion**
+  - 1. For **new user or user reviewed less than four times**, we can recommend most popular restaurants at first generated by our **Popularity-based recommender**.
+  - 2. For **user reviewed more than four times**:
+    - Given the performances of **NMF** and **UVD** are comparable, we can have the overlap of commendation results generated by these two models as the final recommendation.
+    - As the results generated by **Popularity-based**, **Neighborhood-based Approach** and **Matrix Factorization Approach** models are totally different, we can allocate different weights to these models to construct the final recommendation. 
+      - Like 0.2 for **Popularity-based**, 0.2 for **Neighborhood-based**, 0.6 for overlap of **NMF** and **UVD**.
 
 
 
