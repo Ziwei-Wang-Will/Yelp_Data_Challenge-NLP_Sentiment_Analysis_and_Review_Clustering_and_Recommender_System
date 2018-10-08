@@ -48,7 +48,7 @@
 3. Review Clustering
 4. Other User Cases of Clustering
 5. Recommender System Model Fitting and Models Comparison
-    
+6. Recommendation Results Analysis and Insights    
 
 ## Analysis Details
 
@@ -222,7 +222,7 @@
       - With an **average absolute error** of **0.0391**, which is very close to **0.0137** of **NMF**.
 - [**Detailed Code**](pending) 
 
-### 6. Recommendation Results Analysis, Insights and Next Step
+### 6. Recommendation Results Analysis and Insights
 - **Recommendation results Analysis between different recommendation systems**
   - We generated the overlap tables of the **top_10** and **top_100** results given by the four models for 'user with user_number = 100' as below:
     - <img src="https://github.com/will-zw-wang/Music_box-Churn_Prediction_and_Recommender_System/blob/master/images/The%20overlap%20of%20the%20top%2010%20recommendation%20generated%20by%20these%20four%20models.png">
