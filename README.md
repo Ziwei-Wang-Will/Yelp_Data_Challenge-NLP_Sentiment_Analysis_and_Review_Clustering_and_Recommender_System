@@ -94,7 +94,7 @@
             - It indicated that Random Forest, in fact, couldn't generalized the results to the unseen data (or testing data) very well, and was a high-variance model for this project instance.
     - **Models with grid search**
         - We tried grid search for these models to find the best predictable classifier
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/Basic_vs_GridSearch_model_performance_comparison.png" width="600" height="140"> 
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/Basic_vs_GridSearch_model_performance_comparison.png" width="650" height="140"> 
         - The performance of models with grid_search were very close to those of basic models, which indicated our baisc models had already performed greatly in this dataset and hard for the models with grid_search to perform better.
     - **Models with standardized tf-idf vectors and with (Stardardized + PCA) tf-idf vectors**
         -  We tried standardization and PCA to see if we could improve the model performace.
