@@ -133,7 +133,7 @@
         - Thus, it might be reasonable to use these neutral words to make the negative prediction (stars <= 4).
 - What features (words) were important by inspecting the **Random Forest** model？
     - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/top_words_by_RF.png" width="120" height="400">
-    - In Random Forest, the feature importances were all positive. If the feature importance was higher, this feature (or word) plays an important role in predicting the labels (a positive or negative review). 
+    - In **Random Forest**, the feature importances were all positive. If the feature importance was higher, this feature (or word) plays an important role in predicting the labels (a positive or negative review). 
     - That's why some negative words found in the top 20 features by sorting the feature importances, such as 'bad', 'worst', and so on. Some top words include positive words, such as 'amazing', 'best', and 'great'. Both of positive and negative words were important features (words) as they have higher feature importances.
 
 ### 4. Review Clustering
