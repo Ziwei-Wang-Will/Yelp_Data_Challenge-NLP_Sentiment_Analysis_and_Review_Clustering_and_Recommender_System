@@ -101,7 +101,7 @@
         -  We tried standardization and PCA to see if we could improve the model performace.
         - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_auc_comparison.png" width="620" height="120">
         - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_accuracy_comparison_.png" width="800" height="120">
-        - Did standardized and standardized&PCA preprocessing improve the basic model performce by comparing the AUCs and Accuracies? 
+        - **Did standardized and standardized&PCA preprocessing improve the basic model performce by comparing the AUCs and Accuracies?** 
             - Only performed **standardization without PCA**
                 - No significant impact on performances of **Logistic Regression** and **Random Forest**.
                 - Had nagetive impact on **KNN**.
