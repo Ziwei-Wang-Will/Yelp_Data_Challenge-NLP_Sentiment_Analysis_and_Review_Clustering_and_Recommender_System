@@ -87,7 +87,7 @@
 - Classified positive/negative review
     - **Basic model with cross validation**
         - We tried to perform cross validation to evaluate basic model.
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="500" height="140"> 
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/CV_basic_model_performance_comparison.png" width="600" height="140"> 
         - The performance of **KNN** was the weakest. 
         - The trainng score and the test score of the other three models were comparable, seems no negative impact of overfitting. 
         - In **KNN**, **Logistic regression** and **Naive-Bayes** models, the difference between training and testing score was extremely close. 
@@ -99,8 +99,8 @@
         - The performance of models with grid_search were very close to those of basic models, which indicated our baisc models had already performed greatly in this dataset and hard for the models with grid_search to perform better.
     - **Models with standardized tf-idf vectors and with (Stardardized + PCA) tf-idf vectors**
         -  We tried standardization and PCA to see if we could improve the model performace.
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_auc_comparison.png" width="600" height="140">
-        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_accuracy_comparison_.png" width="800" height="140">
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_auc_comparison.png" width="620" height="120">
+        - <img src="https://github.com/will-zw-wang/Yelp_Data_Challenge-NLP_Sentiment_Analysis_and_Review_Clustering_and_Recommender_System/blob/master/images/sentiment%20classification/GridSearch_vs_PCA_model_accuracy_comparison_.png" width="800" height="120">
         - Did standardized and standardized&PCA preprocessing improve the basic model performce by comparing the AUCs and Accuracies? 
             - Only performed **standardization without PCA**
                 - No significant impact on performances of **Logistic Regression** and **Random Forest**.
